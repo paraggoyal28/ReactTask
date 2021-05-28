@@ -12,6 +12,9 @@ app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 app.use('/tasks', taskRoutes);
 app.use('/login', loginRoutes);
+app.get('/', (req, res) => {
+    res.send('WELCOME TO REACT TASK APPLICATION');
+})
 // mongodb
 const CONNECTION_URL = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.helhe.mongodb.net/taskManagerDb`;
 const PORT = process.env.PORT || 5000;
